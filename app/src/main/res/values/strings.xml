@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Pharmacy App</string>
+
+    <!--Login Page-->
+    <string name="login_welcome">Hello! Welcome Back</string>
+    <string name="enter_email">Email</string>
+    <string name="enter_password">Password</string>
+    <string name="forget_password">Forgot Password</string>
+    <string name="login_btn">Login</string>
+    <string name="signup_link">New User? <font color="#0645AD">Create Account</font> </string>
+
+    <!--Registration Page-->
+    <string name="registration_welcome">Create Account</string>
+    <string name="enter_name">Name</string>
+    <string name="enter_phone">Contact</string>
+    <string name="confrim_pass">Confirm Password</string>
+    <string name="register_btn">Register</string>
+    <string name="loginpg_link">Already have an account? <font color="#0645AD">Login</font></string>
 </resources>

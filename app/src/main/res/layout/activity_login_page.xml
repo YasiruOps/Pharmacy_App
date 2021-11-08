@@ -24,7 +24,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textSize="32sp"
-            android:text="Already Have an Account"
+            android:text="@string/login_welcome"
             />
         <ImageView
             android:layout_width="0dp"
@@ -36,25 +36,25 @@
     <EditText
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="Email"/>
+        android:text="@string/enter_email"/>
     <EditText
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="Password"/>
+        android:text="@string/enter_password"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right"
-        android:text="Forgot Password?"/>
+        android:text="@string/forget_password"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="@string/login_btn" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="New user? Create Account"/>
+        android:text="@string/signup_link"/>
 </LinearLayout>
 
 </RelativeLayout>
