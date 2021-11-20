@@ -33,35 +33,48 @@
             />
     </LinearLayout>
     <EditText
+        android:id="@+id/reg_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_name"/>
+        android:inputType="textPersonName"
+        android:hint="@string/enter_name" />
     <EditText
+        android:id="@+id/reg_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_email"/>
+        android:inputType="textEmailAddress"
+        android:hint="@string/enter_email"/>
     <EditText
+        android:id="@+id/reg_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_phone"/>
+        android:inputType="phone"
+        android:hint="@string/enter_phone"/>
     <EditText
+        android:id="@+id/reg_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_password"/>
+        android:inputType="textPassword"
+        android:hint="@string/enter_password"/>
     <EditText
+        android:id="@+id/reg_conf_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/confrim_pass"/>
+        android:inputType="textPassword"
+        android:hint="@string/confrim_pass"/>
 
     <Button
+        android:id="@+id/register_Btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/register_btn"/>
 
     <TextView
+        android:id="@+id/login_page_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/loginpg_link"
+        android:textColorLink="@color/blue_link"
         android:gravity="center_horizontal"/>
 
 </LinearLayout>

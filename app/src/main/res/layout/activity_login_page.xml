@@ -34,26 +34,33 @@
             />
     </LinearLayout>
     <EditText
+        android:id="@+id/enter_mail"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="@string/enter_email"/>
+        android:inputType="textEmailAddress"
+        android:hint="@string/enter_email"/>
     <EditText
+        android:inputType="textPassword"
+        android:id="@+id/enter_pass"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="@string/enter_password"/>
+        android:hint="@string/enter_password"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right"
         android:text="@string/forget_password"/>
     <Button
+        android:id="@+id/loginbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login_btn" />
     <TextView
+        android:id="@+id/sign_up_pg_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:textColorLink="@color/blue_link"
         android:text="@string/signup_link"/>
 </LinearLayout>
 

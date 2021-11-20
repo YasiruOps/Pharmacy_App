@@ -7,7 +7,7 @@
     <string name="enter_password">Password</string>
     <string name="forget_password">Forgot Password</string>
     <string name="login_btn">Login</string>
-    <string name="signup_link">New User? <font color="#0645AD">Create Account</font> </string>
+    <string name="signup_link">New User? <a href="">Create Account</a> </string>
 
     <!--Registration Page-->
     <string name="registration_welcome">Create Account</string>
@@ -15,5 +15,5 @@
     <string name="enter_phone">Contact</string>
     <string name="confrim_pass">Confirm Password</string>
     <string name="register_btn">Register</string>
-    <string name="loginpg_link">Already have an account? <font color="#0645AD">Login</font></string>
+    <string name="loginpg_link">Already have an account? <a href="">Login</a></string>
 </resources>

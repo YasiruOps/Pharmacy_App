@@ -9,15 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PharmacyApp">
-        <activity android:name=".RegisterPage"></activity>
-        <activity android:name=".LoginPage" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".HomePage"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true"
+            ></activity>
+        <activity
+            android:name=".RegisterPage"
+            android:exported="true"/>
+
+        <!-- start activity-->
+        <activity
+            android:name=".LoginPage"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

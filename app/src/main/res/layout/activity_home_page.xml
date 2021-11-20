@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage">
+
+    <LinearLayout
+        android:id="@+id/topblock"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:background="#00FF00">
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/enter_password"
+            android:queryHint="Search"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageset"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/topblock"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/home_page_img"/>
+    
+    <LinearLayout
+        android:id="@+id/photo_up_block"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/imageset"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:background="@drawable/round_rectangle"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order quickly with prescription"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:text="upload presctripion and tell us what you need well do the rest"/>
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Upload"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/photo_up_block"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/home_page_selector" />
+
+    </LinearLayout>
+
+</RelativeLayout>
