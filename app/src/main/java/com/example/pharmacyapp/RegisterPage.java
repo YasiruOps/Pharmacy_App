@@ -1,5 +1,6 @@
 package com.example.pharmacyapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,22 +12,43 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class RegisterPage extends AppCompatActivity {
+
+    public static final String TAG = "TAG";
 
     EditText varname, varemail, varcontact, varpass, varconfpass;
     Button varreg_btn;
     TextView loginpglink;
 
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
+    String userID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
+
 
         varname = findViewById(R.id.reg_name);
         varemail =findViewById(R.id.reg_email);
@@ -34,6 +56,8 @@ public class RegisterPage extends AppCompatActivity {
         varpass = findViewById(R.id.reg_pass);
         varconfpass = findViewById(R.id.reg_conf_pass);
 
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
         varreg_btn = findViewById(R.id.register_Btn);
         varreg_btn.setOnClickListener(new View.OnClickListener() {
@@ -84,8 +108,38 @@ public class RegisterPage extends AppCompatActivity {
                     return;
                 }
 
+                //signing happens here
+
                 if (field_chck == true) {
 
+                    fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(RegisterPage.this, "User Registerd", Toast.LENGTH_SHORT).show();
+
+                                //Adding user data to firebase
+                                userID = fAuth.getCurrentUser().getUid();
+                                DocumentReference documentReference = fStore.collection("users").document(userID);
+                                Map<String, Object> user = new HashMap<>();
+                                user.put("Name",name);
+                                user.put("Contact",contact);
+                                user.put("Email", email);
+                                user.put("Password",password);
+                                documentReference.set(user).addOnSuccessListener((OnSuccessListener) (aVoid) ->{
+                                    Log.d(TAG, "onSuccess: user Profile was created for "+ userID);
+                                }).addOnFailureListener (new OnFailureListener(){
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG, "onFailure "+ e.toString());
+                                    }
+                                });
+                                startActivity(new Intent(getApplicationContext(), HomePage.class));
+                            } else{
+                                Toast.makeText(RegisterPage.this, "Error" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
             }
         });

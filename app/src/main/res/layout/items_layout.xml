@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <ImageView
         tools:ignore="ContentDescription,MissingConstraints"
         android:layout_width="match_parent"
         android:layout_height="245dp"
         android:scaleType="centerCrop"
         android:id="@+id/my_featured_image"
-        android:src="@drawable/nice" />
+        android:src="@drawable/item1" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/nice"
+        app:srcCompat="@drawable/the_slider_background"
         app:layout_constraintBottom_toBottomOf="@+id/my_featured_image"
         tools:ignore="ContentDescription"
         android:id="@+id/slider_background"/>
@@ -32,6 +31,5 @@
         tools:layout_editor_absoluteY="164dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/slider_background"
-        tools:ignore="MissingConstraints"
-        android:gravity="center_horizontal" />
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
